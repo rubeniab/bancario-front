@@ -11,7 +11,7 @@ function Siguiente() {
 
  const handleGenerarPDF = async () => {
     try {
-      const res = await fetch("http://localhost:3000/api/bancos/reporte", {
+      const res = await fetch("https://bancario-backend-production.up.railway.app/api/bancos/reporte", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

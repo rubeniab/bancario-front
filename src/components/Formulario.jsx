@@ -26,7 +26,7 @@ function Formulario() {
     e.preventDefault();
 
     try {
-      const res = await fetch("http://localhost:3000/api/bancos/filtros", {
+      const res = await fetch("https://bancario-backend-production.up.railway.app/api/bancos/filtros", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
