@@ -113,3 +113,59 @@ button:hover {
     transform: translateY(0);
   }
 }
+
+/* ------------------------- */
+/* 📱 Responsive Breakpoints */
+/* ------------------------- */
+
+/* Tablets (iPad) */
+@media (max-width: 1024px) {
+  form {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .container {
+    margin: 20px 10px;
+  }
+
+  header h1,
+  header h2 {
+    font-size: 1.8rem;
+  }
+}
+
+/* Phones (small devices) */
+@media (max-width: 768px) {
+  form {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  header h1,
+  header h2 {
+    font-size: 1.5rem;
+  }
+
+  button {
+    width: 100%;
+  }
+}
+
+/* Very small devices */
+@media (max-width: 480px) {
+  form {
+    grid-template-columns: 1fr;
+  }
+
+  .container {
+    padding: 15px;
+  }
+
+  header img {
+    max-width: 80px;
+  }
+
+  header h1,
+  header h2 {
+    font-size: 1.2rem;
+  }
+}
