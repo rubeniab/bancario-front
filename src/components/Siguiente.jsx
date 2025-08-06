@@ -74,21 +74,21 @@ return (
       </div>
 
 
-      <div style={{ ...styles.botones, gap: '12px', flexWrap: 'wrap' }}>
-  <button
-    style={styles.boton}
-    onClick={handleGenerarPDF}
-  >
-    Generar línea de captura
-  </button>
+      <div style={styles.botones}>
+        <button
+          style={styles.boton}
+           onClick={handleGenerarPDF}
+        >
+          Generar línea de captura
+        </button>
 
-  <button
-    style={styles.boton}
-    onClick={() => navigate("/")}
-  >
-    Regresar
-  </button>
-</div>
+        <button
+          style={styles.boton}
+          onClick={() => navigate("/")}
+        >
+          Regresar
+        </button>
+      </div>
     </div>
   );
 }
