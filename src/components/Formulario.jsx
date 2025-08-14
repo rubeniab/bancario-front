@@ -1,6 +1,8 @@
+import "./Formulario.css";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import Swal from "sweetalert2";
+
 
 function Formulario() {
   const navigate = useNavigate();

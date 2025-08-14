@@ -1,6 +1,15 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import styles from "./Siguiente.styles";
 
+function tipoPredioTexto(tipo) {
+  switch (Number(tipo)) {
+    case 1: return '1 Urbano';
+    case 2: return '2 Suburbano';
+    case 3: return '3 Rural';
+    default: return 'Desconocido';
+  }
+}
+
 function Siguiente() {
   const location = useLocation();
   const data = location.state?.data;
@@ -50,7 +59,7 @@ return (
 
         <div style={styles.campo}>
           <label style={styles.label}>Tipo Predio</label>
-          <div style={styles.valor}>{data.TIPO_PRED}</div>
+          <div style={styles.valor}>{tipoPredioTexto(data.TIPO_PRED)}</div>
         </div>
       </div>
 
@@ -77,17 +86,19 @@ return (
       <div style={styles.botones}>
         <button
           style={styles.boton}
+          onClick={() => navigate("/")}
+        >
+          Regresar
+        </button>
+
+        <button
+          style={styles.boton}
            onClick={handleGenerarPDF}
         >
           Generar línea de captura
         </button>
 
-        <button
-          style={styles.boton}
-          onClick={() => navigate("/")}
-        >
-          Regresar
-        </button>
+       
       </div>
     </div>
   );

@@ -1,0 +1,33 @@
+.header {
+  text-align: center;
+  padding: 10px;
+}
+
+.logo {
+  max-width: 120px;
+  height: auto;
+}
+
+.split-letter {
+  display: inline; /* No usar inline-block */
+  white-space: nowrap; /* Evita salto de línea */
+}
+
+
+.titulo {
+  font-size: 2.2rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin: 5px 0;
+  display: inline-block;
+  white-space: nowrap; /* Evita que se corte */
+}
+
+.titulo span {
+  display: inline-block; /* Asegura que cada letra quede en línea */
+}
+
+.subtitulo {
+  font-size: clamp(1rem, 3vw, 1.5rem);
+  color: #555;
+}

@@ -29,19 +29,26 @@ const styles = {
     minHeight: "30px",
   },
   botones: {
+    display: "flex",
+    justifyContent: "center", // Centra los botones
+    gap: "10px", // Espacio entre botones
+    flexWrap: "wrap", // Para que en pantallas pequeñas se acomoden uno debajo del otro
     marginTop: "20px",
-    textAlign: "center",
   },
   boton: {
-    backgroundColor: "#4a89dc",
-    color: "#fff",
-    padding: "5px 15px",
+    padding: "8px 16px",
+    fontSize: "14px",
+    borderRadius: "6px",
     border: "none",
-    margin: "0 5px",
     cursor: "pointer",
+    backgroundColor: "#5fa9d6",
+    color: "#fff",
+    minWidth: "140px", // Menor ancho base
+    flex: "1 1 auto", // Permite que crezcan o se achiquen
+    maxWidth: "200px", // Evita que sean demasiado anchos
   },
   botonHover: {
-    backgroundColor: "#357ab8",
+    backgroundColor: "#4f95c3",
   },
 };
 
