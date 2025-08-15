@@ -81,7 +81,7 @@ function Formulario() {
   <div className="modal-overlay">
     <div className="modal-content">
       <button className="close-button" onClick={() => setIsAyudaOpen(false)}>X</button>
-      <img href="/RECIBO2.jpg" alt="Ayuda" className="modal-image" />
+      <img src="/RECIBO2.jpg" alt="Ayuda" className="modal-image" />
     </div>
   </div>
 )}
