@@ -9,7 +9,7 @@ function Header() {
   return (
     <header>
       <img
-        src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Logo_example.png/200px-Logo_example.png"
+        src="../images/Logo.png" // Asegúrate de que la ruta sea correcta
         alt="Logo"
         className="logo"
       />

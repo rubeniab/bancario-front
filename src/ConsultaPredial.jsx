@@ -10,6 +10,7 @@ function ConsultarPredial() {
       <Routes>
         <Route path="/" element={<Formulario />} />
         <Route path="/siguiente" element={<Siguiente />} />
+        
       </Routes>
     </BrowserRouter>
   );

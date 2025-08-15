@@ -17,6 +17,8 @@ function Formulario() {
     TIPO_PRED: "",
   });
 
+  const [isAyudaOpen, setIsAyudaOpen] = useState(false);
+
   const handleChange = (e, key) => {
     setFormData({
       ...formData,
@@ -55,12 +57,12 @@ function Formulario() {
 
   return (
     <div className="container">
-      <h3>
-        Consulta de Impuesto Predial 2025
-        <a href="#" style={{ float: "right", fontSize: "0.9rem" }}>
-          Ayuda
-        </a>
-      </h3>
+<h3>
+  Consulta de Impuesto Predial 2025
+  <span className="ayuda-link" onClick={() => setIsAyudaOpen(true)}>
+    Ayuda
+  </span>
+</h3>
 
       <form onSubmit={handleSubmit}>
         {Object.keys(formData).map((key, index) => (
@@ -75,6 +77,14 @@ function Formulario() {
         ))}
         <button type="submit">Consultar</button>
       </form>
+{isAyudaOpen && (
+  <div className="modal-overlay">
+    <div className="modal-content">
+      <button className="close-button" onClick={() => setIsAyudaOpen(false)}>X</button>
+      <img src="/images/RECIBO2.jpg" alt="Ayuda" className="modal-image" />
+    </div>
+  </div>
+)}
     </div>
   );
 }
