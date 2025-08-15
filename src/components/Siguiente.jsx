@@ -35,17 +35,17 @@ function Siguiente() {
 
       const blob = await res.blob();
       const url = window.URL.createObjectURL(blob);
-      const a = document.createElement("a");
-      a.href = url;
-      a.download = "reporte.pdf";
-      document.body.appendChild(a);
-      a.click();
-      a.remove();
-      window.URL.revokeObjectURL(url);
+      //const a = document.createElement("a");
+      //a.href = url;
+      //a.download = "reporte.pdf";
+      // Abrir PDF en nueva pestaña
+    window.open(url, "_blank");
 
-    } catch (error) {
-      console.error("Error al generar PDF:", error);
-      alert(error.message);
+    // Opcional: liberar el URL después de un tiempo
+    setTimeout(() => window.URL.revokeObjectURL(url), 10000);
+  } catch (error) {
+    console.error("Error al generar PDF:", error);
+    alert(error.message);
     }
   };
 

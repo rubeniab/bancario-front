@@ -17,8 +17,6 @@ function Formulario() {
     TIPO_PRED: "",
   });
 
-  const [isAyudaOpen, setIsAyudaOpen] = useState(false);
-
   const handleChange = (e, key) => {
     setFormData({
       ...formData,
@@ -55,6 +53,18 @@ function Formulario() {
     }
   };
 
+   const [isAyudaOpen, setIsAyudaOpen] = useState(false);
+
+  const etiquetas = {
+    CONG: "Congregación",
+    REGION: "Región",
+    MANZ: "Manzana",
+    LOTE: "Lote",
+    NIVEL: "Nivel",
+    DEPTO: "Depto.",
+    TIPO_PRED: "T. Predio",
+  };
+
   return (
     <div className="container">
 <h3>
@@ -67,7 +77,7 @@ function Formulario() {
       <form onSubmit={handleSubmit}>
         {Object.keys(formData).map((key, index) => (
           <div key={index}>
-            <label>{key}</label>
+            <label>{etiquetas[key]}</label>
             <input
               type="number"
               value={formData[key]}
