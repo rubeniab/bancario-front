@@ -9,7 +9,7 @@ function Header() {
   return (
     <header>
       <img
-        src="../images/Logo.png" // Asegúrate de que la ruta sea correcta
+        src="/Logo.png" // Asegúrate de que la ruta sea correcta
         alt="Logo"
         className="logo"
       />
