@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import styles from "./Siguiente.styles";
 
@@ -16,6 +17,8 @@ function Siguiente() {
   const filtros = location.state?.filtros;
   const navigate = useNavigate();
 
+  const [pdfUrl, setPdfUrl] = useState(null); // Para mostrar PDF
+
   if (!data) return <p>No hay datos para mostrar.</p>;
 
  const handleGenerarPDF = async () => {
@@ -33,13 +36,13 @@ function Siguiente() {
         throw new Error(errorData.message || "Error al generar PDF");
       }
 
-      const blob = await res.blob();
+      const blob = await res.blob(); // Obtener el blob del PDF
       const url = window.URL.createObjectURL(blob);
       //const a = document.createElement("a");
       //a.href = url;
       //a.download = "reporte.pdf";
       // Abrir PDF en nueva pestaña
-    window.open(url, "_blank");
+     setPdfUrl(url);
 
     // Opcional: liberar el URL después de un tiempo
     setTimeout(() => window.URL.revokeObjectURL(url), 10000);
@@ -100,6 +103,18 @@ return (
 
        
       </div>
+
+       {pdfUrl && (
+        <div style={{ marginTop: 20 }}>
+          <iframe
+            src={pdfUrl}
+            width="100%"
+            height="600px"
+            style={{ border: "1px solid #ccc" }}
+            title="PDF"
+          />
+        </div>
+      )}
     </div>
   );
 }
