@@ -1,12 +1,22 @@
 /* Contenedor principal */
 .container {
-  width: clamp(280px, 90%, 500px); /* Se adapta a pantalla */
-  margin: 60px auto;
-  padding: clamp(12px, 3vw, 20px);
+  width: 95%;
+  padding: 20px;
+  max-width: 500px;
+  margin: 0 auto;
   border: 1px solid #ccc;
   border-radius: 8px;
   background: #fff;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 95%;       /* No se va a expandir tanto */
+    max-width: 350px; /* Ajuste cómodo para celular */
+    margin: 20px auto;
+    padding: 15px;
+  }
 }
 
 /* Título y link de ayuda */
@@ -26,22 +36,33 @@
   top: 0;
 }
 
-.container input{
+.container input {
   width: 100%;
-  padding: 2px 0.9px;
-  margin-bottom: 15px;
+  padding: 8px;
   font-size: 0.9rem;
   border: 1px solid #ccc;
   border-radius: 6px;
   outline: none;
-  transition: all 0.2s ease-in-out;
+}
+
+@media (max-width: 768px) {
+  .container input {
+     width: 20%;           /* reduce a la mitad */
+  padding: 8px;
+  font-size: 0.9rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+  display: block;       /* asegura que esté en bloque */
+  margin: 0 auto 10px;
+  }
 }
 
 /* Botón */
 button {
-  width: 100%;
-  padding: clamp(6px, 2vw, 10px);
-  font-size: clamp(0.85rem, 2vw, 1rem);
+  grid-column: 1 / -1; /* hace que el botón abarque toda la fila */
+  padding: 10px;
+  font-size: 1rem;
   background-color: #5fa9d6;
   color: #fff;
   border: none;
@@ -51,12 +72,6 @@ button {
 
 button:hover {
   background-color: #4f95c3;
-}
-/* Contenedor principal */
-.container {
-  padding: 20px;
-  max-width: 600px;
-  margin: 0 auto;
 }
 
 /* Enlace de ayuda */
